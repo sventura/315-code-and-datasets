@@ -55,6 +55,21 @@ StatMosaic <- ggproto("StatMosaic", Stat,
                       }
 )
 
+
+
+mosaic_legend <- function(color1 = "blue", color2 = "red") {
+  palette = c(color1, "white", color2)
+  scale_fill_manual(name="Standardized\nResiduals",
+                    values=colorRampPalette(palette)(5),
+                    labels=c("r > 4", "2 < r < 4",
+                             "-2 < r < 2", "-4 < r < -2",
+                             "r < -4"),
+                    drop = FALSE)
+  
+}
+
+
+
 # wrapper using StatMosaic
 geom_mosaic <- function(mapping = NULL, data = NULL,
                         stat = "mosaic", position = "identity",
@@ -75,12 +90,4 @@ geom_mosaic <- function(mapping = NULL, data = NULL,
       ...
     )
   )
-}
-
-mosaic_legend <- function(palette = c("blue", "white", "red")) {
-  scale_fill_manual(name="Standardized\nResiduals",
-                    values=colorRampPalette(palette)(5),
-                    labels=c("r > 4","2 < r < 4",
-                             "-2 < r < 2","-4 < r < -2",
-                             "r < -4"))
 }
