@@ -1,4 +1,4 @@
-#  Authors:  Peter Elliot and Sam Ventura
+#  Authors:  Peter Elliott and Sam Ventura
 library(ggplot2)
 
 # creates StatMosaic object
