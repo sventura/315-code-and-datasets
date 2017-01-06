@@ -1,0 +1,15 @@
+---
+title: "Introduction"
+author: "sam"
+date: "April 10, 2016"
+output: html_document
+---
+
+
+etc, etc, etc
+
+```{r, echo=FALSE}
+htmltools::includeHTML("password.html")
+```
+
+etc, etc, etc
